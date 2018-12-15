@@ -244,7 +244,7 @@ bcrm<-function(stop=list(nmax=NULL,nmtd=NULL,precision=NULL,nmin=NULL,safety=NUL
       currentdata<-data.frame(patient=(ncurrent-cohort+1):ncurrent,dose=rep(current,cohort),tox=y)
       newdata<-rbind(newdata,currentdata)    
   
-      if (!minmalFix){
+      if (!minimalFix){
         if(simulate & match<length(results) & method!="exact.sim"){
           repeat{
             match.tox<-all(xtabs(tox~factor(dose,levels=1:k),data=results[[match]]$data[1:dim(newdata)[1],])==xtabs(tox~factor(dose,levels=1:k),data=newdata))
